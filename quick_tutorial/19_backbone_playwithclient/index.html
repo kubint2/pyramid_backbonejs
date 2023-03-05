@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<meta charset="UTF-8">
+	<title>Backbone HelloWord App</title>
+</head>
+<body>
+	<div class="container">
+		<h1>User Management</h1>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th>UserId</th>
+					<th>Role</th>
+					<th>Group</th>
+					<th>Description</th>
+					<th>Action</th>
+				</tr>
+				<tr id="input">
+					<td><input class="form-control userid-input"/></td>
+					<td><input class="form-control role-input"/></td>
+					<td><input class="form-control group-input"/></td>
+					<td><input class="form-control description-input"/></td>
+					<td>
+						<button class="btn btn-primary add-user">Add</button>
+						<button class="btn btn-primary reset">Reset</button>
+					</td>
+				</tr>
+			</thead>
+			<tbody class="user-list"></tbody>
+		</table>
+	</div>
+
+	<script type="text/template" class="user-template">
+		<td><span class='userid' > <%= userid %> </span></td>
+		<td><span class='role' > <%= role %> </span></td>
+		<td><span class='group' > <%= group %> </span></td>
+		<td><span class='description' > <%= description %> </span></td>
+		<td>
+			<button class="btn btn-warning edit-user">Edit</button> 
+			<button class="btn btn-danger delete-user">Delete</button>
+			<button class="btn btn-success update-user" style="display:none">Update</button> 
+			<button class="btn btn-danger cancel" style="display:none">Cancel</button>
+		</td>
+	</script>
+	
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/backbone/backbone.js"></script>
+	<script src="scripts.js"></script>
+</body>
+</html>
