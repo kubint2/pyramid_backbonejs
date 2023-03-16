@@ -1,0 +1,22 @@
+{% macro foo() %}
+	CHILD
+{% endmacro %}
+{% macro user_row(userid, role, group, description) %}
+	<td><span class='userid' > {{ userid }} </span></td>
+	<td><span class='role' > {{ role }} </span></td>
+	<td><span class='group' > {{ group }} </span></td>
+	<td><span class='description' > {{ description }} </span></td>
+	<td>
+		<button class="btn btn-warning edit-user">Edit</button> 
+		<button class="btn btn-danger delete-user">Delete</button>
+		<button class="btn btn-success update-user" style="display:none">Update</button> 
+		<button class="btn btn-danger cancel" style="display:none">Cancel</button>
+	</td>
+{% endmacro %}
+{% macro generate_user(users) %}
+	{% for userData in users %}
+		<tr>
+			{{ user_row(userData['userid'], userData['role'], userData['group'], userData['description'] ) }}
+		</tr>
+	{% endfor %}
+{% endmacro %}
